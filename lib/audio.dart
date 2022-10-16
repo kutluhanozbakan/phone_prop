@@ -11,16 +11,8 @@ class AudioControll extends StatefulWidget {
   @override
   State<AudioControll> createState() => _AudioControllState();
 }
-
-//!!!!!!!!!!!!!!!!FOR IOS!!!!!!!!!!!!!!! NOT TESTED YET!
-// <key>NSAppTransportSecurity</key>
-// <dict>
-//     <key>NSAllowsArbitraryLoads</key>
-//     <true/>
-// </dict>
-//!!!!!!!!!!!!!!!!FOR IOS!!!!!!!!!!!!!!!!
 bool? audioChecked = false;
-const alarmAudioPath = "test_sound.mp3";
+
 
 
 class _AudioControllState extends State<AudioControll> {
@@ -78,6 +70,6 @@ class _AudioControllState extends State<AudioControll> {
     int soundId = await rootBundle.load("assets/test_sound.mp3").then((ByteData soundData) {
                   return pool.load(soundData);
                 });
-    int streamId = await pool.play(soundId);
+    await pool.play(soundId);
   }
 }
