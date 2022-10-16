@@ -7,6 +7,7 @@ import 'package:device_info_plus/device_info_plus.dart';
 import 'package:phone_properties/flash_light.dart';
 import 'package:phone_properties/proximity.dart';
 
+import 'audio.dart';
 import 'camera.dart';
 import 'device_info.dart';
 void main() {
@@ -92,6 +93,10 @@ class _MyHomePageState extends State<MyHomePage> {
            ElevatedButton(onPressed: (){
            Navigator.of(context).push(MaterialPageRoute(builder: (context) => CameraTest()));
            }, child: Text("Camera")),
+             ElevatedButton(onPressed: (){
+           Navigator.of(context).push(MaterialPageRoute(builder: (context) => AudioControll()));
+           }, child: Text("Audio")),
+           
            ],
            
         ),
